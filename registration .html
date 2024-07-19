@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #form {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 10px 10px 10px rgba(172, 151, 33, 0.685);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #aaa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #btn {
+            background-color: #3b6286;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 40%;
+        }
+
+        #btn:hover {
+            background-color: #a1753b;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6dace2;
+        }
+
+        a:hover {
+            color: #7fafd8;
+        }
+
+        h2 {
+            color: #868e3e;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <form id="form">
+        <h2>Registration Form</h2>
+        <label>Name:</label> <input type="text"
+            id="name"> <br><br>
+        <label>Email:</label> <input type="email"
+            id="email"> <br><br>
+        <label>Mobile No.:</label> <input type="text"
+            id="mobile"> <br><br>
+        <label>Create Password:</label> <input type="password"
+            id="password"> <br><br>
+        <button id="btn"> Submit</button>
+    </form>
+    <p>Already User <a href="login.html"> Login Here</a> </p>
+</body>
+
+<script>
+    let arr = []
+    let form = document.getElementById("form")
+    let name = document.getElementById("name")
+    let email = document.getElementById("email")
+    let mobile = document.getElementById("mobile")
+    let password = document.getElementById("password")
+    let btn = document.getElementById("btn")
+    btn.addEventListener("click", (e) => {
+        e.preventDefault()
+        let obj = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            mobile: document.getElementById("mobile").value,
+            password: document.getElementById("password").value
+
+        }
+        arr.push(obj)
+        localStorage.setItem("user", JSON.stringify(arr))
+        alert("Data Inserted")
+        form.reset();
+    })
+</script>
+
+</html>
