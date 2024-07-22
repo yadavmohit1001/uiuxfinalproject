@@ -108,7 +108,7 @@
             <button id="btn">Log in</button><br><br>
         </form>
     </div>
-    <p> Don't Have a Account? <a href="registration .html">Click Here</a></p>
+    <p> Don't Have a Account? <a href="registration.html">Click Here</a></p>
 
 
     <p id="msg"></p>
@@ -133,11 +133,12 @@
         form.reset()
         if (value) {
             alert("login successfully")
-            window.location.href = "homepage.html"
+            window.location.href = "home.html"
         } else {
             msg.innerHTML = "Details not Found";
             msg.style.color = "red"
         }
+
     }
     btn.addEventListener("click", (e) => {
         loginUser();
